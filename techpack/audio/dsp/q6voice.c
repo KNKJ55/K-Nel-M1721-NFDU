@@ -4365,7 +4365,7 @@ static int voice_get_avcs_version_per_service(uint32_t service_id)
 		return -EINVAL;
 	}
 
-#ifdef CONFIG_MACH_XIAOMI_C6
+#ifdef CONFIG_MACH_MEIZU_M1721
 	common.is_avcs_version_queried = true;
 	return CVP_VERSION_1;
 #endif
