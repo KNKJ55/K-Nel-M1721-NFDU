@@ -792,7 +792,7 @@ static int dp_display_usbpd_attention_cb(struct device *dev)
 		return -ENODEV;
 	}
 
-	if (dp->usbpd->hpd_irq && dp->usbpd->hpd_high && !dp->power_on)
+	if (dp->usbpd->hpd_high && dp->usbpd->hpd_irq)
 		drm_dp_cec_irq(dp->aux->drm_aux);
 
 	if (dp->usbpd->hpd_irq && dp->usbpd->hpd_high &&
