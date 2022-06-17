@@ -793,6 +793,8 @@ static int dp_link_parse_request(struct dp_link_private *link)
 
 	pr_debug("device service irq vector = 0x%x\n", data);
 
+	drm_dp_cec_irq(link->aux->drm_aux);
+
 	if (!(data & DP_AUTOMATED_TEST_REQUEST)) {
 		pr_debug("no test requested\n");
 		return 0;
