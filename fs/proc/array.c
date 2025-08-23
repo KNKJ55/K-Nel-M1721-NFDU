@@ -345,7 +345,11 @@ static inline void task_cap(struct seq_file *m, struct task_struct *p)
 static inline void task_seccomp(struct seq_file *m, struct task_struct *p)
 {
 #ifdef CONFIG_SECCOMP
+#ifdef CONFIG_SECCOMP_STATUS_SPOOF
+    seq_put_decimal_ull(m, "Seccomp:\t", 2);
+#else
 	seq_put_decimal_ull(m, "Seccomp:\t", p->seccomp.mode);
+#endif
 	seq_putc(m, '\n');
 #endif
 	seq_printf(m, "Speculation_Store_Bypass:\t");

@@ -777,6 +777,15 @@ config SECCOMP
 	  enabled via prctl(PR_SET_SECCOMP), it cannot be disabled
 	  and the task is only allowed to execute a few safe syscalls
 	  defined by each seccomp mode.
+	  
+if SECCOMP
+
+config SECCOMP_STATUS_SPOOF
+    bool "Spoof Seccomp Status to 2"
+    ---help---
+	  This kernel feature will force Seccomp status in /proc/$pids/status to 2.
+
+endif
 
 config PARAVIRT
 	bool "Enable paravirtualization code"
