@@ -1705,11 +1705,9 @@ void msm_vfe47_cfg_axi_ub_equal_default(
 	struct msm_vfe_axi_shared_data *axi_data =
 		&vfe_dev->axi_data;
 	uint32_t total_image_size = 0;
-	uint8_t pix_num_used_wms = 0;
-	uint8_t rdi_num_used_wms = 0;
+	uint8_t num_used_wms = 0;
 	uint32_t prop_size = 0;
 	uint32_t wm_ub_size;
-	uint32_t min_ub;
 	uint64_t delta;
 	uint32_t rdi_ub_offset;
 
